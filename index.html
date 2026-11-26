@@ -347,7 +347,8 @@
     //    (elle ressemble à https://xxxx.sibforms.com/serve/MUIF…)
     // 3. La coller ci-dessous.
     // Tant que c'est vide, la page fonctionne en mode démo (rien n'est envoyé).
-    const FORM_ENDPOINT = "";
+    // Formulaire Brevo « Page d'attente lably.fr » → liste « Liste d'attente lably.fr »
+    const FORM_ENDPOINT = "https://120165d5.sibforms.com/serve/MUIFAF7rs8nZZWLS1-VGyB2F4QbgDdfh9o1w4uMNZDNhEiRXirY3pfo6xv5_2xceo4n3uAFA11XMxEwq49hBn0S3TxjAvWrx6YL3L4fz5rvwgIXoXoSgwVnxVGGXojYYnT8_zmGIVpbiwEdBuSPZZyMcvqnpSsY0JopGlI1mgRHMwJqpg9RZ-c8B-uZU8Wrqby7iE4jwy6XWo5lltw==";
 
     const form = document.getElementById("formulaire");
     const input = document.getElementById("email");
@@ -379,6 +380,7 @@
           donnees.append("EMAIL", email);
           donnees.append("email_address_check", ""); // anti-robots attendu par Brevo
           donnees.append("locale", "fr");
+          donnees.append("html_type", "simple");
           await fetch(FORM_ENDPOINT, { method: "POST", body: donnees, mode: "no-cors" });
         }
         form.querySelector(".champ").style.display = "none";

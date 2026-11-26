@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lably — Studio de design d'étiquettes et de packaging</title>
+  <meta name="description" content="Lably dessine les étiquettes et le packaging des marques qui se lancent : compléments alimentaires, cosmétiques, café et thé. Ouverture très bientôt.">
+  <meta name="theme-color" content="#F6F5F2">
+
+  <!-- Partage réseaux -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lably.fr/">
+  <meta property="og:title" content="Lably — Ta marque mérite un packaging qui donne envie.">
+  <meta property="og:description" content="Studio de design d'étiquettes et de packaging pour les marques qui se lancent. Ouverture très bientôt.">
+
+  <meta property="og:image" content="https://lably.fr/brand/lably-profil-1080px.png">
+
+  <link rel="icon" type="image/svg+xml" href="brand/lably-icone.svg">
+  <link rel="icon" type="image/png" sizes="512x512" href="brand/lably-favicon-512px.png">
+  <link rel="apple-touch-icon" href="brand/lably-favicon-512px.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --encre: #111111;
+      --fond: #F6F5F2;
+      --corail: #E2533A;
+      --corail-fonce: #C9442D;
+      --pierre: #E9E6E0;
+      --gris: #6B6862;
+      --rayon: 22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      background: var(--fond);
+      color: var(--encre);
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-optical-sizing: auto;
+      font-size: 17px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- En-tête ---------- */
+    header { padding: 28px 0 0; }
+    header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .logo { display: block; height: 42px; width: auto; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 500; letter-spacing: .01em;
+      padding: 7px 14px; border-radius: 999px;
+      background: var(--pierre); color: var(--encre);
+      white-space: nowrap;
+    }
+    .badge::before {
+      content: ""; width: 7px; height: 7px; border-radius: 50%;
+      background: var(--corail);
+      animation: pouls 2.2s ease-in-out infinite;
+    }
+    @keyframes pouls { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+
+    /* ---------- Contenu principal ---------- */
+    main { flex: 1; display: flex; align-items: center; padding: 56px 0 64px; }
+    .grille {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+      gap: 64px;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6.4vw, 76px);
+      font-weight: 600;
+      font-variation-settings: "opsz" 32;
+      letter-spacing: -0.035em;
+      line-height: 1.02;
+      margin: 0 0 24px;
+      text-wrap: balance;
+    }
+    h1 em { font-style: normal; color: var(--corail); }
+
+    .chapo {
+      font-size: clamp(17px, 1.6vw, 19px);
+      color: #2B2A28;
+      max-width: 34em;
+      margin: 0 0 32px;
+    }
+
+    /* Formulaire */
+    .formulaire { max-width: 520px; }
+    .champ {
+      display: flex; gap: 8px;
+      background: #fff;
+      border: 1.5px solid var(--encre);
+      border-radius: 999px;
+      padding: 6px;
+    }
+    .champ:focus-within { box-shadow: 0 0 0 4px rgba(226, 83, 58, .22); }
+    .champ input {
+      flex: 1; min-width: 0;
+      border: 0; outline: 0; background: transparent;
+      font: inherit; font-size: 16px; color: var(--encre);
+      padding: 10px 6px 10px 18px;
+    }
+    .champ input::placeholder { color: #9A968E; }
+    .champ button {
+      flex: none;
+      border: 0; cursor: pointer;
+      font: inherit; font-size: 15px; font-weight: 600;
+      color: #fff; background: var(--corail);
+      padding: 12px 22px; border-radius: 999px;
+      transition: background .15s ease, transform .15s ease;
+    }
+    .champ button:hover { background: var(--corail-fonce); }
+    .champ button:active { transform: scale(.97); }
+    .champ button:disabled { opacity: .6; cursor: default; }
+    .note { font-size: 13.5px; color: var(--gris); margin: 12px 0 0 20px; }
+    .message {
+      display: none;
+      font-size: 15px; font-weight: 500;
+      margin: 14px 0 0 20px;
+    }
+    .message.ok { display: block; color: var(--encre); }
+    .message.erreur { display: block; color: var(--corail-fonce); }
+    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+    /* ---------- Étiquette (visuel) ---------- */
+    .scene { display: flex; justify-content: center; }
+    .etiquette {
+      position: relative;
+      width: 100%; max-width: 360px;
+      background: #fff;
+      border-radius: var(--rayon);
+      padding: 26px 26px 22px;
+      box-shadow: 0 1px 0 rgba(17,17,17,.04), 0 24px 48px -24px rgba(17,17,17,.28);
+      transform: rotate(-3deg);
+      transform-origin: 50% 0;
+      animation: balance 6s ease-in-out infinite;
+    }
+    @keyframes balance { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(-1deg); } }
+
+    /* trou perforé + œillet corail */
+    .etiquette .trou {
+      position: absolute; top: 22px; right: 22px;
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--fond);
+      box-shadow: inset 0 2px 4px rgba(17,17,17,.12);
+      display: grid; place-items: center;
+    }
+    .etiquette .trou::after {
+      content: ""; width: 10px; height: 10px; border-radius: 50%;
+      background: var(--corail);
+    }
+    .etiquette .ficelle {
+      position: absolute; top: -90px; right: 36px;
+      width: 1.5px; height: 112px;
+      background: linear-gradient(to bottom, transparent, var(--encre) 40%);
+      opacity: .5;
+    }
+
+    .etiquette .ligne-haut {
+      font-size: 11.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--gris);
+      margin-bottom: 64px;
+    }
+    .etiquette .nom {
+      font-size: 40px; font-weight: 600;
+      font-variation-settings: "opsz" 32;
+      letter-spacing: -0.04em; line-height: 1;
+      margin: 0 0 8px;
+    }
+    .etiquette .sous {
+      font-size: 14px; color: var(--gris); margin: 0 0 28px;
+    }
+    .etiquette .pied {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      border-top: 1.5px dashed #CFCAC1;
+      padding-top: 16px;
+      font-size: 12.5px; color: var(--gris);
+    }
+    .etiquette .pied strong { display: block; color: var(--encre); font-size: 14px; font-weight: 600; }
+    .etiquette .pied .prix { text-align: right; }
+    .etiquette .pied .prix strong { color: var(--corail); font-size: 20px; letter-spacing: -0.02em; }
+
+    /* ---------- Secteurs ---------- */
+    .secteurs {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin: 36px 0 0; padding: 0; list-style: none;
+    }
+    .secteurs li {
+      font-size: 14px; font-weight: 500;
+      padding: 8px 14px; border-radius: 999px;
+      border: 1.5px solid var(--pierre);
+      background: transparent;
+    }
+
+    /* ---------- Bande « comment ça marche » ---------- */
+    .bande { background: var(--pierre); padding: 40px 0; }
+    .etapes {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px;
+      margin: 0; padding: 0; list-style: none; counter-reset: etape;
+    }
+    .etapes li { counter-increment: etape; }
+    .etapes li::before {
+      content: counter(etape, decimal-leading-zero);
+      display: block;
+      font-size: 13px; font-weight: 600; color: var(--corail);
+      margin-bottom: 6px;
+    }
+    .etapes strong { display: block; font-weight: 600; font-size: 17px; margin-bottom: 2px; letter-spacing: -0.01em; }
+    .etapes span { font-size: 15px; color: #45433F; }
+
+    /* ---------- Pied de page ---------- */
+    footer { padding: 22px 0 28px; font-size: 13.5px; color: var(--gris); }
+    footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    footer a { color: inherit; text-underline-offset: 3px; }
+
+    /* ---------- Mobile ---------- */
+    @media (max-width: 860px) {
+      main { padding: 40px 0 48px; }
+      .grille { grid-template-columns: 1fr; gap: 56px; }
+      .etiquette { max-width: 300px; }
+      .etiquette .ficelle { display: none; }
+      .etiquette .ligne-haut { margin-bottom: 40px; }
+      .etiquette .nom { font-size: 34px; }
+      .etapes { grid-template-columns: 1fr; gap: 20px; }
+    }
+    @media (max-width: 480px) {
+      .wrap { padding: 0 16px; }
+      header { padding-top: 20px; }
+      .logo { height: 38px; }
+      .badge { font-size: 12px; padding: 6px 11px; }
+      .champ { flex-direction: column; border-radius: 20px; padding: 6px; }
+      .champ input { padding: 12px 14px; }
+      .champ button { width: 100%; padding: 14px; border-radius: 14px; }
+      .note, .message { margin-left: 4px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .etiquette, .badge::before { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <a href="/" aria-label="Lably, accueil">
+        <img class="logo" src="brand/lably-logo.svg" alt="Lably" width="372" height="140">
+      </a>
+      <span class="badge">Ouverture très bientôt</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap grille">
+      <section>
+        <h1>Ta marque mérite un packaging qui <em>donne envie.</em></h1>
+        <p class="chapo">
+          Lably dessine les étiquettes et les boîtes des marques qui se lancent.
+          Un packaging premium dès le premier jour, des fichiers prêts pour ton imprimeur,
+          et un prix affiché d'avance. Sans appel commercial.
+        </p>
+
+        <form class="formulaire" id="formulaire" novalidate>
+          <label for="email" class="hp">Ton email</label>
+          <div class="champ">
+            <input id="email" name="EMAIL" type="email" inputmode="email" autocomplete="email"
+                   placeholder="ton@email.fr" required>
+            <button type="submit">Préviens-moi</button>
+          </div>
+          <!-- Anti-robots : champ caché que seuls les robots remplissent -->
+          <div class="hp" aria-hidden="true">
+            <input type="text" name="site_web" tabindex="-1" autocomplete="off">
+          </div>
+          <p class="note">On t'écrit à l'ouverture, avec notre guide gratuit pour lancer ta marque. Pas de spam, désinscription en un clic.</p>
+          <p class="message" id="message" role="status" aria-live="polite"></p>
+        </form>
+
+        <ul class="secteurs" aria-label="Secteurs">
+          <li>Compléments alimentaires</li>
+          <li>Cosmétiques</li>
+          <li>Café, thé &amp; épicerie fine</li>
+        </ul>
+      </section>
+
+      <div class="scene" aria-hidden="true">
+        <div class="etiquette">
+          <span class="ficelle"></span>
+          <span class="trou"></span>
+          <div class="ligne-haut">Ta marque · Lot 001</div>
+          <p class="nom">Ton produit</p>
+          <p class="sous">Le packaging qui le fait remarquer.</p>
+          <div class="pied">
+            <div>
+              <strong>Prêt à imprimer</strong>
+              CMJN · fonds perdus · BAT
+            </div>
+            <div class="prix">
+              dès
+              <strong>490 €</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="bande" aria-label="Comment ça marche">
+    <div class="wrap">
+      <ol class="etapes">
+        <li><strong>Tu choisis ton offre</strong><span>Prix fixe, paiement en ligne, puis un brief simple.</span></li>
+        <li><strong>Premier concept en 5 jours</strong><span>Deux séries de corrections, jusqu'à ce que tu valides.</span></li>
+        <li><strong>Tu reçois tout</strong><span>Fichiers pour l'imprimeur, visuels 3D et kit de lancement.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Lably · Studio de design d'étiquettes et de packaging</span>
+      <!-- TODO : ajouter le lien vers les mentions légales (obligatoires en France) -->
+      <a href="mailto:bonjour@lably.fr">bonjour@lably.fr</a>
+    </div>
+  </footer>
+
+  <script>
+    // ⚙️ Inscriptions → Brevo (gratuit, et servira aussi à la séquence d'emails du kit).
+    // 1. Brevo > Contacts > Formulaires > Créer un formulaire d'inscription (liste « Liste d'attente »)
+    // 2. Partager > « Code HTML » : copier l'URL du action="…" de la balise <form>
+    //    (elle ressemble à https://xxxx.sibforms.com/serve/MUIF…)
+    // 3. La coller ci-dessous.
+    // Tant que c'est vide, la page fonctionne en mode démo (rien n'est envoyé).
+    const FORM_ENDPOINT = "";
+
+    const form = document.getElementById("formulaire");
+    const input = document.getElementById("email");
+    const message = document.getElementById("message");
+    const bouton = form.querySelector("button");
+
+    function afficher(texte, type) {
+      message.textContent = texte;
+      message.className = "message " + type;
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (form.site_web.value) return; // robot
+
+      const email = input.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        afficher("Hmm, cet email n'a pas l'air valide. Tu peux vérifier ?", "erreur");
+        input.focus();
+        return;
+      }
+
+      bouton.disabled = true;
+      bouton.textContent = "Envoi…";
+
+      try {
+        if (FORM_ENDPOINT) {
+          const donnees = new FormData();
+          donnees.append("EMAIL", email);
+          donnees.append("email_address_check", ""); // anti-robots attendu par Brevo
+          donnees.append("locale", "fr");
+          await fetch(FORM_ENDPOINT, { method: "POST", body: donnees, mode: "no-cors" });
+        }
+        form.querySelector(".champ").style.display = "none";
+        form.querySelector(".note").style.display = "none";
+        afficher("C'est noté ✓ On te prévient dès l'ouverture.", "ok");
+      } catch (err) {
+        afficher("Oups, ça n'est pas passé. Réessaie dans un instant.", "erreur");
+        bouton.disabled = false;
+        bouton.textContent = "Préviens-moi";
+      }
+    });
+  </script>
+</body>
+</html>

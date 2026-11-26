@@ -4,15 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lably — Studio de design d'étiquettes et de packaging</title>
-  <meta name="description" content="Lably dessine les étiquettes et le packaging des marques qui se lancent : compléments alimentaires, cosmétiques, café et thé. Ouverture très bientôt.">
+  <meta name="description" content="Lably dessine les étiquettes et le packaging des marques qui se lancent : compléments alimentaires, cosmétiques, café et thé. Prix fixe dès 590 €, premier concept en 5 jours ouvrés, fichiers prêts pour l'imprimeur.">
   <meta name="theme-color" content="#F6F5F2">
+  <link rel="canonical" href="https://lably.fr/">
 
-  <!-- Partage réseaux -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://lably.fr/">
   <meta property="og:title" content="Lably — Ta marque mérite un packaging qui donne envie.">
-  <meta property="og:description" content="Studio de design d'étiquettes et de packaging pour les marques qui se lancent. Ouverture très bientôt.">
-
+  <meta property="og:description" content="Étiquettes et packaging prêts pour l'imprimeur. Premier concept en 5 jours ouvrés. Dès 590 €.">
   <meta property="og:image" content="https://lably.fr/brand/lably-profil-1080px.png">
 
   <link rel="icon" type="image/svg+xml" href="brand/lably-icone.svg">
@@ -22,376 +21,547 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --encre: #111111;
-      --fond: #F6F5F2;
-      --corail: #E2533A;
-      --corail-fonce: #C9442D;
-      --pierre: #E9E6E0;
-      --gris: #6B6862;
-      --rayon: 22px;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      min-height: 100dvh;
-      display: flex;
-      flex-direction: column;
-      background: var(--fond);
-      color: var(--encre);
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-      font-optical-sizing: auto;
-      font-size: 17px;
-      line-height: 1.55;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .wrap {
-      width: 100%;
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* ---------- En-tête ---------- */
-    header { padding: 28px 0 0; }
-    header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-    .logo { display: block; height: 42px; width: auto; }
-    .badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 13px; font-weight: 500; letter-spacing: .01em;
-      padding: 7px 14px; border-radius: 999px;
-      background: var(--pierre); color: var(--encre);
-      white-space: nowrap;
-    }
-    .badge::before {
-      content: ""; width: 7px; height: 7px; border-radius: 50%;
-      background: var(--corail);
-      animation: pouls 2.2s ease-in-out infinite;
-    }
-    @keyframes pouls { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
-
-    /* ---------- Contenu principal ---------- */
-    main { flex: 1; display: flex; align-items: center; padding: 56px 0 64px; }
-    .grille {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
-      gap: 64px;
-      align-items: center;
-    }
-
-    h1 {
-      font-size: clamp(40px, 6.4vw, 76px);
-      font-weight: 600;
-      font-variation-settings: "opsz" 32;
-      letter-spacing: -0.035em;
-      line-height: 1.02;
-      margin: 0 0 24px;
-      text-wrap: balance;
-    }
-    h1 em { font-style: normal; color: var(--corail); }
-
-    .chapo {
-      font-size: clamp(17px, 1.6vw, 19px);
-      color: #2B2A28;
-      max-width: 34em;
-      margin: 0 0 32px;
-    }
-
-    /* Formulaire */
-    .formulaire { max-width: 520px; }
-    .champ {
-      display: flex; gap: 8px;
-      background: #fff;
-      border: 1.5px solid var(--encre);
-      border-radius: 999px;
-      padding: 6px;
-    }
-    .champ:focus-within { box-shadow: 0 0 0 4px rgba(226, 83, 58, .22); }
-    .champ input {
-      flex: 1; min-width: 0;
-      border: 0; outline: 0; background: transparent;
-      font: inherit; font-size: 16px; color: var(--encre);
-      padding: 10px 6px 10px 18px;
-    }
-    .champ input::placeholder { color: #9A968E; }
-    .champ button {
-      flex: none;
-      border: 0; cursor: pointer;
-      font: inherit; font-size: 15px; font-weight: 600;
-      color: #fff; background: var(--corail);
-      padding: 12px 22px; border-radius: 999px;
-      transition: background .15s ease, transform .15s ease;
-    }
-    .champ button:hover { background: var(--corail-fonce); }
-    .champ button:active { transform: scale(.97); }
-    .champ button:disabled { opacity: .6; cursor: default; }
-    .note { font-size: 13.5px; color: var(--gris); margin: 12px 0 0 20px; }
-    .message {
-      display: none;
-      font-size: 15px; font-weight: 500;
-      margin: 14px 0 0 20px;
-    }
-    .message.ok { display: block; color: var(--encre); }
-    .message.erreur { display: block; color: var(--corail-fonce); }
-    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-
-    /* ---------- Étiquette (visuel) ---------- */
-    .scene { display: flex; justify-content: center; }
-    .etiquette {
-      position: relative;
-      width: 100%; max-width: 360px;
-      background: #fff;
-      border-radius: var(--rayon);
-      padding: 26px 26px 22px;
-      box-shadow: 0 1px 0 rgba(17,17,17,.04), 0 24px 48px -24px rgba(17,17,17,.28);
-      transform: rotate(-3deg);
-      transform-origin: 50% 0;
-      animation: balance 6s ease-in-out infinite;
-    }
-    @keyframes balance { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(-1deg); } }
-
-    /* trou perforé + œillet corail */
-    .etiquette .trou {
-      position: absolute; top: 22px; right: 22px;
-      width: 30px; height: 30px; border-radius: 50%;
-      background: var(--fond);
-      box-shadow: inset 0 2px 4px rgba(17,17,17,.12);
-      display: grid; place-items: center;
-    }
-    .etiquette .trou::after {
-      content: ""; width: 10px; height: 10px; border-radius: 50%;
-      background: var(--corail);
-    }
-    .etiquette .ficelle {
-      position: absolute; top: -90px; right: 36px;
-      width: 1.5px; height: 112px;
-      background: linear-gradient(to bottom, transparent, var(--encre) 40%);
-      opacity: .5;
-    }
-
-    .etiquette .ligne-haut {
-      font-size: 11.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
-      color: var(--gris);
-      margin-bottom: 64px;
-    }
-    .etiquette .nom {
-      font-size: 40px; font-weight: 600;
-      font-variation-settings: "opsz" 32;
-      letter-spacing: -0.04em; line-height: 1;
-      margin: 0 0 8px;
-    }
-    .etiquette .sous {
-      font-size: 14px; color: var(--gris); margin: 0 0 28px;
-    }
-    .etiquette .pied {
-      display: flex; justify-content: space-between; align-items: flex-end;
-      border-top: 1.5px dashed #CFCAC1;
-      padding-top: 16px;
-      font-size: 12.5px; color: var(--gris);
-    }
-    .etiquette .pied strong { display: block; color: var(--encre); font-size: 14px; font-weight: 600; }
-    .etiquette .pied .prix { text-align: right; }
-    .etiquette .pied .prix strong { color: var(--corail); font-size: 20px; letter-spacing: -0.02em; }
-
-    /* ---------- Secteurs ---------- */
-    .secteurs {
-      display: flex; flex-wrap: wrap; gap: 8px;
-      margin: 36px 0 0; padding: 0; list-style: none;
-    }
-    .secteurs li {
-      font-size: 14px; font-weight: 500;
-      padding: 8px 14px; border-radius: 999px;
-      border: 1.5px solid var(--pierre);
-      background: transparent;
-    }
-
-    /* ---------- Bande « comment ça marche » ---------- */
-    .bande { background: var(--pierre); padding: 40px 0; }
-    .etapes {
-      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px;
-      margin: 0; padding: 0; list-style: none; counter-reset: etape;
-    }
-    .etapes li { counter-increment: etape; }
-    .etapes li::before {
-      content: counter(etape, decimal-leading-zero);
-      display: block;
-      font-size: 13px; font-weight: 600; color: var(--corail);
-      margin-bottom: 6px;
-    }
-    .etapes strong { display: block; font-weight: 600; font-size: 17px; margin-bottom: 2px; letter-spacing: -0.01em; }
-    .etapes span { font-size: 15px; color: #45433F; }
-
-    /* ---------- Pied de page ---------- */
-    footer { padding: 22px 0 28px; font-size: 13.5px; color: var(--gris); }
-    footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-    footer a { color: inherit; text-underline-offset: 3px; }
-
-    /* ---------- Mobile ---------- */
-    @media (max-width: 860px) {
-      main { padding: 40px 0 48px; }
-      .grille { grid-template-columns: 1fr; gap: 56px; }
-      .etiquette { max-width: 300px; }
-      .etiquette .ficelle { display: none; }
-      .etiquette .ligne-haut { margin-bottom: 40px; }
-      .etiquette .nom { font-size: 34px; }
-      .etapes { grid-template-columns: 1fr; gap: 20px; }
-    }
-    @media (max-width: 480px) {
-      .wrap { padding: 0 16px; }
-      header { padding-top: 20px; }
-      .logo { height: 38px; }
-      .badge { font-size: 12px; padding: 6px 11px; }
-      .champ { flex-direction: column; border-radius: 20px; padding: 6px; }
-      .champ input { padding: 12px 14px; }
-      .champ button { width: 100%; padding: 14px; border-radius: 14px; }
-      .note, .message { margin-left: 4px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .etiquette, .badge::before { animation: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/accueil.css">
 </head>
 <body>
 
-  <header>
-    <div class="wrap">
-      <a href="/" aria-label="Lably, accueil">
-        <img class="logo" src="brand/lably-logo.svg" alt="Lably" width="372" height="140">
-      </a>
-      <span class="badge">Ouverture très bientôt</span>
+<!-- =================== EN-TÊTE =================== -->
+<header class="entete">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Lably, accueil"><img src="brand/lably-logo.svg" alt="Lably" width="372" height="140"></a>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="#offres">Offres et prix</a>
+      <a href="#process">Comment ça marche</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="entete-actions">
+      <a class="btn btn-achat btn-s" href="#offres">Commencer</a>
+      <button class="menu-btn" aria-label="Ouvrir le menu" aria-controls="nav" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <div class="wrap grille">
-      <section>
-        <h1>Ta marque mérite un packaging qui <em>donne envie.</em></h1>
-        <p class="chapo">
-          Lably dessine les étiquettes et les boîtes des marques qui se lancent.
-          Un packaging premium dès le premier jour, des fichiers prêts pour ton imprimeur,
-          et un prix affiché d'avance. Sans appel commercial.
-        </p>
+<main>
 
-        <form class="formulaire" id="formulaire" novalidate>
-          <label for="email" class="hp">Ton email</label>
-          <div class="champ">
-            <input id="email" name="EMAIL" type="email" inputmode="email" autocomplete="email"
-                   placeholder="ton@email.fr" required>
-            <button type="submit">Préviens-moi</button>
-          </div>
-          <!-- Anti-robots : champ caché que seuls les robots remplissent -->
-          <div class="hp" aria-hidden="true">
-            <input type="text" name="site_web" tabindex="-1" autocomplete="off">
-          </div>
-          <p class="note">On t'écrit à l'ouverture, avec notre guide gratuit pour lancer ta marque. Pas de spam, désinscription en un clic.</p>
-          <p class="message" id="message" role="status" aria-live="polite"></p>
-        </form>
+<!-- =================== HAUT DE PAGE =================== -->
+<section class="hero">
+  <div class="wrap hero-grille">
+    <div>
+      <div class="sur-titre">Studio de design d'étiquettes &amp; packaging</div>
+      <h1>Ta marque mérite un packaging qui <span class="accent">donne envie.</span></h1>
+      <p class="chapo">Étiquettes et boîtes pour les marques qui se lancent, dessinées par des designers spécialisés et prêtes pour ton imprimeur. Premier concept en 5 jours ouvrés, dès 590&nbsp;€.</p>
+      <div class="hero-actions">
+        <a class="btn btn-achat" href="#offres">Voir les offres et prix <span class="fleche" aria-hidden="true">→</span></a>
+        <a class="btn btn-contour" href="#realisations">Voir nos réalisations</a>
+      </div>
+      <ul class="hero-preuves">
+        <li>Satisfait ou remboursé</li>
+        <li>Prix fixe, sans appel commercial</li>
+        <li>Fichiers prêts pour l'imprimeur</li>
+      </ul>
+    </div>
 
-        <ul class="secteurs" aria-label="Secteurs">
-          <li>Compléments alimentaires</li>
-          <li>Cosmétiques</li>
-          <li>Café, thé &amp; épicerie fine</li>
+    <div class="scene" aria-hidden="true">
+      <!-- Illustration : trois contenants types (cosmétique, compléments, café). À remplacer par les visuels de Dimitri. -->
+      <svg class="produits" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g-verre" x1="0" x2="1">
+            <stop offset="0" stop-color="#E9E4DB"/><stop offset=".45" stop-color="#FBF9F5"/><stop offset="1" stop-color="#DCD6CC"/>
+          </linearGradient>
+          <linearGradient id="g-corail" x1="0" x2="1">
+            <stop offset="0" stop-color="#C9442D"/><stop offset=".4" stop-color="#EE6A51"/><stop offset="1" stop-color="#C23F29"/>
+          </linearGradient>
+          <linearGradient id="g-kraft" x1="0" x2="1">
+            <stop offset="0" stop-color="#B98F69"/><stop offset=".5" stop-color="#D2AE88"/><stop offset="1" stop-color="#B08560"/>
+          </linearGradient>
+          <linearGradient id="g-noir" x1="0" x2="1">
+            <stop offset="0" stop-color="#050505"/><stop offset=".5" stop-color="#2A2A2A"/><stop offset="1" stop-color="#050505"/>
+          </linearGradient>
+          <filter id="flou" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="10"/></filter>
+        </defs>
+
+        <!-- ombres au sol -->
+        <ellipse cx="300" cy="508" rx="70" ry="12" fill="#111" opacity=".16" filter="url(#flou)"/>
+        <ellipse cx="180" cy="530" rx="88" ry="13" fill="#111" opacity=".2" filter="url(#flou)"/>
+        <ellipse cx="438" cy="548" rx="90" ry="12" fill="#111" opacity=".18" filter="url(#flou)"/>
+
+        <!-- Flacon pompe (cosmétique) -->
+        <g>
+          <rect x="268" y="96" width="64" height="26" rx="7" fill="url(#g-noir)"/>
+          <rect x="324" y="102" width="52" height="11" rx="4" fill="#111"/>
+          <rect x="286" y="120" width="28" height="44" rx="4" fill="url(#g-noir)"/>
+          <rect x="246" y="160" width="108" height="346" rx="30" fill="url(#g-verre)"/>
+          <rect x="256" y="262" width="88" height="186" rx="8" fill="#111"/>
+          <circle cx="300" cy="286" r="7" fill="#F6F5F2"/><circle cx="300" cy="286" r="3" fill="#E2533A"/>
+          <text x="300" y="342" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="25" letter-spacing="-0.5" fill="#F6F5F2">brume</text>
+          <text x="300" y="362" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" letter-spacing="1" fill="#A9A49B">SÉRUM VISAGE</text>
+          <line x1="272" x2="328" y1="404" y2="404" stroke="#3A3936"/>
+          <text x="300" y="428" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#A9A49B">30 ml · 1 fl oz</text>
+        </g>
+
+        <!-- Pilulier (compléments) -->
+        <g>
+          <rect x="98" y="312" width="164" height="44" rx="11" fill="url(#g-noir)"/>
+          <rect x="106" y="350" width="148" height="176" rx="20" fill="url(#g-corail)"/>
+          <rect x="116" y="378" width="128" height="118" rx="6" fill="#F6F5F2"/>
+          <text x="180" y="420" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="27" letter-spacing="-1" fill="#111">nova</text>
+          <text x="180" y="440" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" letter-spacing="1.4" fill="#6B6862">MAGNÉSIUM</text>
+          <text x="180" y="452" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" letter-spacing="1.4" fill="#6B6862">BISGLYCINATE</text>
+          <rect x="146" y="466" width="68" height="18" rx="9" fill="#111"/>
+          <text x="180" y="479" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="9.5" fill="#F6F5F2">60 gélules</text>
+        </g>
+
+        <!-- Doypack (café) -->
+        <g>
+          <path d="M370 300 H506 L518 528 Q519 552 496 552 H380 Q357 552 358 528 Z" fill="url(#g-kraft)"/>
+          <path d="M370 300 H506 L507 318 H369 Z" fill="#A87F5A" opacity=".55"/>
+          <line x1="368" x2="508" y1="334" y2="334" stroke="#9C7450" stroke-width="2" stroke-dasharray="3 4"/>
+          <rect x="386" y="374" width="106" height="134" rx="8" fill="#F6F5F2"/>
+          <text x="439" y="414" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="24" letter-spacing="-0.8" fill="#111">maël</text>
+          <text x="439" y="432" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" letter-spacing="1.3" fill="#6B6862">CAFÉ DE SPÉCIALITÉ</text>
+          <circle cx="439" cy="458" r="12" fill="none" stroke="#E2533A" stroke-width="2"/>
+          <circle cx="439" cy="458" r="4" fill="#E2533A"/>
+          <text x="439" y="494" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="10" fill="#111">250 g · grains</text>
+        </g>
+      </svg>
+
+      <div class="bulle bulle-1">
+        <div class="icone">PDF</div>
+        <div><strong>Fichier imprimeur ✓</strong><span>CMJN · fonds perdus 3 mm</span></div>
+      </div>
+      <div class="bulle bulle-2">
+        <div class="icone corail">J+5</div>
+        <div><strong>Premier concept</strong><span>sous 5 jours ouvrés</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SECTEURS =================== -->
+<section class="secteurs" aria-label="Secteurs">
+  <div class="wrap">
+    <p class="secteurs-intro">On dessine pour les marques qui se lancent en :</p>
+    <div class="secteurs-grille">
+      <!-- TODO : relier chaque tuile à sa page secteur (/complements, /cosmetiques, /cafe) quand elles existeront -->
+      <div class="secteur revele">
+        <div class="pictogramme" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"><rect x="6" y="3" width="14" height="5" rx="1.5"/><rect x="5" y="8" width="16" height="15" rx="3"/><rect x="8.5" y="12" width="9" height="7" rx="1" fill="#E2533A" stroke="none"/></svg>
+        </div>
+        <div><strong>Compléments alimentaires</strong><span>Piluliers, sachets, flacons</span></div>
+      </div>
+      <div class="secteur revele" data-delai="1">
+        <div class="pictogramme" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"><path d="M10 2h6v3h-6z"/><path d="M11.5 5v3h3V5"/><rect x="7.5" y="8" width="11" height="16" rx="3.5"/><circle cx="13" cy="15.5" r="2.2" fill="#E2533A" stroke="none"/></svg>
+        </div>
+        <div><strong>Cosmétiques</strong><span>Flacons, tubes, pots, boîtes</span></div>
+      </div>
+      <div class="secteur revele" data-delai="2">
+        <div class="pictogramme" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round"><path d="M7 4h12l1.5 18a1.5 1.5 0 0 1-1.5 1.6H7A1.5 1.5 0 0 1 5.5 22z"/><path d="M6.5 8h13" stroke-dasharray="2 2"/><rect x="9" y="12" width="8" height="7" rx="1" fill="#E2533A" stroke="none"/></svg>
+        </div>
+        <div><strong>Café, thé &amp; épicerie fine</strong><span>Doypacks, boîtes, bocaux</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== COMPARAISON (RISQUES) =================== -->
+<section class="section" id="pourquoi">
+  <div class="wrap">
+    <div class="entete-section centre revele">
+      <div class="sur-titre">Pourquoi Lably</div>
+      <h2>Trois façons de faire ton packaging.<br><span class="accent">Une seule sans mauvaise surprise.</span></h2>
+      <p class="chapo">Une étiquette ratée, ça se voit en rayon, ça se paie à l'impression et ça se refait. Voilà ce que tu risques selon le chemin que tu prends.</p>
+    </div>
+
+    <div class="comparaison">
+      <div class="option revele">
+        <div class="etiquette-option">Le faire soi-même</div>
+        <h3>Toi, sur Canva</h3>
+        <p class="sous">Gratuit sur le papier, cher en soirées.</p>
+        <ul>
+          <li>Fichier refusé par l'imprimeur (couleurs RVB, pas de fonds perdus)</li>
+          <li>Un rendu « fait maison » qu'on repère au premier coup d'œil</li>
+          <li>Mentions trop petites ou mal placées</li>
+          <li>Des semaines perdues au lieu de lancer</li>
         </ul>
-      </section>
+        <div class="risque">
+          <div class="risque-ligne"><span>Risque</span><span>Élevé</span></div>
+          <div class="jauge"><i style="width: 88%"></i></div>
+        </div>
+      </div>
 
-      <div class="scene" aria-hidden="true">
-        <div class="etiquette">
-          <span class="ficelle"></span>
-          <span class="trou"></span>
-          <div class="ligne-haut">Ta marque · Lot 001</div>
-          <p class="nom">Ton produit</p>
-          <p class="sous">Le packaging qui le fait remarquer.</p>
-          <div class="pied">
-            <div>
-              <strong>Prêt à imprimer</strong>
-              CMJN · fonds perdus · BAT
-            </div>
-            <div class="prix">
-              dès
-              <strong>490 €</strong>
-            </div>
-          </div>
+      <div class="option option-lably revele" data-delai="1">
+        <div class="entete-option">
+          <img src="brand/lably-logo-inverse.svg" alt="Lably" width="372" height="140">
+          <span class="pastille">Le bon choix</span>
+        </div>
+        <h3 style="margin-top: 22px">Un studio spécialisé</h3>
+        <p class="sous">Le niveau d'une agence, au prix d'un lancement.</p>
+        <ul>
+          <li>Designers spécialisés packaging, chaque projet validé par notre direction artistique</li>
+          <li>Fichiers vérifiés pour l'impression : CMJN, fonds perdus, gabarit</li>
+          <li>Mentions lisibles et bien placées (leur contenu reste le tien)</li>
+          <li>Prix fixe, délais annoncés, 2 séries de corrections</li>
+          <li>Remboursé si le premier concept ne te plaît pas</li>
+        </ul>
+        <div class="risque">
+          <div class="risque-ligne"><span>Risque</span><span>Quasi nul</span></div>
+          <div class="jauge"><i style="width: 8%"></i></div>
+        </div>
+        <a class="btn btn-achat" href="#offres">Voir les offres <span class="fleche" aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="option revele" data-delai="2">
+        <div class="etiquette-option">Trouver quelqu'un</div>
+        <h3>Un freelance au hasard</h3>
+        <p class="sous">Parfois très bien. Souvent une loterie.</p>
+        <ul>
+          <li>Impossible de juger son niveau avant de payer</li>
+          <li>Pas forcément spécialiste du packaging et de l'impression</li>
+          <li>Délais et corrections à renégocier à chaque étape</li>
+          <li>Les problèmes se découvrent… à l'impression</li>
+        </ul>
+        <div class="risque">
+          <div class="risque-ligne"><span>Risque</span><span>Moyen</span></div>
+          <div class="jauge"><i style="width: 55%"></i></div>
         </div>
       </div>
     </div>
-  </main>
+  </div>
+</section>
 
-  <section class="bande" aria-label="Comment ça marche">
-    <div class="wrap">
-      <ol class="etapes">
-        <li><strong>Tu choisis ton offre</strong><span>Prix fixe, paiement en ligne, puis un brief simple.</span></li>
-        <li><strong>Premier concept en 5 jours</strong><span>Deux séries de corrections, jusqu'à ce que tu valides.</span></li>
-        <li><strong>Tu reçois tout</strong><span>Fichiers pour l'imprimeur, visuels 3D et kit de lancement.</span></li>
-      </ol>
+<!-- =================== CE QUE TU REÇOIS =================== -->
+<section class="section section-encre" id="livrables">
+  <div class="wrap livrables-grille">
+    <div class="revele">
+      <div class="sur-titre">Ce que tu reçois</div>
+      <h2>Pas juste un joli dessin. <span class="accent">Tout ce qu'il faut pour imprimer.</span></h2>
+      <p class="chapo">Un packaging réussi, c'est un beau design et un fichier impeccable. Tu reçois les deux, plus de quoi montrer ton produit avant même qu'il existe.</p>
+      <div class="points">
+        <div class="point"><div class="trou"></div><strong>Prêt pour ton imprimeur</strong><p>Gabarit, CMJN, fonds perdus, traits de coupe : on s'occupe des détails techniques.</p></div>
+        <div class="point"><div class="trou"></div><strong>Ton produit en image</strong><p>Des visuels 3D réalistes pour ta boutique, tes réseaux et tes pubs.</p></div>
+        <div class="point"><div class="trou"></div><strong>Pas encore de flacon ?</strong><p>On part d'un contenant standard de ta catégorie, prêt à commander.</p></div>
+        <div class="point"><div class="trou"></div><strong>Et après ?</strong><p>Le Kit de lancement te guide pour trouver ton fabricant et commander tes étiquettes.</p></div>
+      </div>
     </div>
-  </section>
 
-  <footer>
-    <div class="wrap">
-      <span>© 2026 Lably · Studio de design d'étiquettes et de packaging</span>
-      <!-- TODO : ajouter le lien vers les mentions légales (obligatoires en France) -->
-      <a href="mailto:bonjour@lably.fr">bonjour@lably.fr</a>
+    <div class="fiche revele" data-delai="1" aria-label="Exemple de livraison">
+      <div class="fiche-tete"><strong>Ta marque · Livraison finale</strong><span>6 éléments</span></div>
+      <div class="fichier"><div class="type corail">PDF</div><div><strong>Fichier imprimeur</strong><span>CMJN · fonds perdus · traits de coupe</span></div></div>
+      <div class="fichier"><div class="type">AI</div><div><strong>Fichier source</strong><span>vectoriel · modifiable</span></div></div>
+      <div class="fichier"><div class="type">BAT</div><div><strong>Bon à tirer</strong><span>validé par toi avant impression</span></div></div>
+      <div class="fichier"><div class="type">3D</div><div><strong>Visuels de ton produit</strong><span>PNG haute définition · réseaux &amp; boutique</span></div></div>
+      <div class="fichier"><div class="type">Aa</div><div><strong>Couleurs &amp; typographies</strong><span>références CMJN · RVB · polices</span></div></div>
+      <div class="fichier"><div class="type">KIT</div><div><strong>Kit de lancement</strong><span>guide pas à pas · carnet d'adresses</span></div></div>
+      <div class="fiche-pied">✓ Les fichiers sont à toi, sans abonnement</div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    // ⚙️ Inscriptions → Brevo (gratuit, et servira aussi à la séquence d'emails du kit).
-    // 1. Brevo > Contacts > Formulaires > Créer un formulaire d'inscription (liste « Liste d'attente »)
-    // 2. Partager > « Code HTML » : copier l'URL du action="…" de la balise <form>
-    //    (elle ressemble à https://xxxx.sibforms.com/serve/MUIF…)
-    // 3. La coller ci-dessous.
-    // Tant que c'est vide, la page fonctionne en mode démo (rien n'est envoyé).
-    // Formulaire Brevo « Page d'attente lably.fr » → liste « Liste d'attente lably.fr »
-    const FORM_ENDPOINT = "https://120165d5.sibforms.com/serve/MUIFAF7rs8nZZWLS1-VGyB2F4QbgDdfh9o1w4uMNZDNhEiRXirY3pfo6xv5_2xceo4n3uAFA11XMxEwq49hBn0S3TxjAvWrx6YL3L4fz5rvwgIXoXoSgwVnxVGGXojYYnT8_zmGIVpbiwEdBuSPZZyMcvqnpSsY0JopGlI1mgRHMwJqpg9RZ-c8B-uZU8Wrqby7iE4jwy6XWo5lltw==";
+<!-- =================== OFFRES =================== -->
+<section class="section" id="offres">
+  <div class="wrap">
+    <div class="entete-section centre revele">
+      <div class="sur-titre">Offres et prix</div>
+      <h2>Un prix fixe. <span class="accent">Pas de devis, pas d'appel.</span></h2>
+      <p class="chapo">Tu choisis ton offre, tu paies en ligne, et ton projet démarre. Une agence de packaging te demanderait plusieurs milliers d'euros et des semaines de rendez-vous.</p>
+    </div>
 
-    const form = document.getElementById("formulaire");
-    const input = document.getElementById("email");
-    const message = document.getElementById("message");
-    const bouton = form.querySelector("button");
+    <div class="offres-grille">
+      <article class="offre revele">
+        <h3>Lancement</h3>
+        <p class="pour">Pour lancer ton premier produit avec une étiquette irréprochable.</p>
+        <div class="prix"><strong>590</strong><span>€</span></div>
+        <div class="unique">Paiement unique</div>
+        <!-- TODO : lien de paiement Stripe -->
+        <a class="btn btn-encre" href="#">Choisir Lancement</a>
+        <div class="garanti">✓ Satisfait ou remboursé</div>
+        <ul class="coches">
+          <li>1 étiquette sur mesure</li>
+          <li>Fichiers prêts pour l'imprimeur</li>
+          <li>3 visuels 3D de ton produit</li>
+          <li>Kit de lancement</li>
+          <li>Premier concept en 5 jours ouvrés</li>
+          <li>2 séries de corrections</li>
+        </ul>
+      </article>
 
-    function afficher(texte, type) {
-      message.textContent = texte;
-      message.className = "message " + type;
-    }
+      <article class="offre offre-vedette revele" data-delai="1">
+        <span class="pastille-vedette">Recommandé</span>
+        <h3>Gamme</h3>
+        <p class="pour">Pour lancer plusieurs produits qui forment une vraie gamme.</p>
+        <div class="prix"><strong>1&nbsp;490</strong><span>€</span></div>
+        <div class="unique">Paiement unique</div>
+        <a class="btn btn-achat" href="#">Choisir Gamme</a>
+        <div class="garanti">✓ Satisfait ou remboursé</div>
+        <ul class="coches corail">
+          <li class="titre-liste">Tout Lancement, plus :</li>
+          <li>3 étiquettes déclinées en gamme</li>
+          <li>6 visuels 3D au lieu de 3</li>
+          <li>Une identité packaging cohérente d'un produit à l'autre</li>
+        </ul>
+      </article>
 
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      if (form.site_web.value) return; // robot
+      <article class="offre revele" data-delai="2">
+        <h3>Signature</h3>
+        <p class="pour">Pour une marque prête à briller en rayon, de l'étiquette à la boîte.</p>
+        <div class="prix"><strong>2&nbsp;490</strong><span>€</span></div>
+        <div class="unique">Paiement unique</div>
+        <a class="btn btn-encre" href="#">Choisir Signature</a>
+        <div class="garanti">✓ Satisfait ou remboursé</div>
+        <ul class="coches">
+          <li class="titre-liste">Tout Gamme, plus :</li>
+          <li>Étiquettes et boîte coordonnées</li>
+          <li>10 visuels d'ambiance</li>
+          <li>30 min d'accompagnement avec le studio</li>
+          <li>Impression coordonnée en option</li>
+        </ul>
+      </article>
+    </div>
 
-      const email = input.value.trim();
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        afficher("Hmm, cet email n'a pas l'air valide. Tu peux vérifier ?", "erreur");
-        input.focus();
-        return;
-      }
+    <div class="offres-note revele">
+      <div class="trou" aria-hidden="true"></div>
+      <p><strong>Pas encore de contenant ni de gabarit fabricant ?</strong> Aucun souci : on part d'un contenant standard de ta catégorie (pilulier 60 gélules, flacon pompe 50 ml, doypack 250 g…), facile à commander.</p>
+    </div>
+    <p class="offres-legal">Prix en euros. <span class="a-completer">[À COMPLÉTER : « TTC » ou « TVA non applicable, art. 293 B du CGI »]</span> · <a href="cgv.html">Conditions générales de vente</a></p>
+  </div>
+</section>
 
-      bouton.disabled = true;
-      bouton.textContent = "Envoi…";
+<!-- =================== GARANTIE =================== -->
+<section class="section section-pierre" style="padding: 96px 0">
+  <div class="wrap">
+    <div class="garantie revele">
+      <div class="sceau" aria-hidden="true">
+        <svg viewBox="0 0 168 168">
+          <defs><path id="cercle" d="M84,84 m-66,0 a66,66 0 1,1 132,0 a66,66 0 1,1 -132,0"/></defs>
+          <text font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#111">
+            <textPath href="#cercle" textLength="406" lengthAdjust="spacing">SATISFAIT OU REMBOURSÉ · LABLY STUDIO · </textPath>
+          </text>
+        </svg>
+        <div class="coeur"></div>
+      </div>
+      <div>
+        <div class="sur-titre">Notre garantie</div>
+        <h2>Le risque, c'est pour nous. <span class="accent">Pas pour toi.</span></h2>
+        <p>Si le premier concept ne te plaît pas, on te rembourse intégralement. S'il te plaît, tu as 2 séries de corrections pour l'amener exactement là où tu veux, jusqu'à ta validation du bon à tirer.</p>
+        <p class="petit">Conditions détaillées dans nos <a href="cgv.html">CGV</a>.</p>
+      </div>
+      <a class="btn btn-achat" href="#offres">Je me lance <span class="fleche" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
 
-      try {
-        if (FORM_ENDPOINT) {
-          const donnees = new FormData();
-          donnees.append("EMAIL", email);
-          donnees.append("email_address_check", ""); // anti-robots attendu par Brevo
-          donnees.append("locale", "fr");
-          donnees.append("html_type", "simple");
-          await fetch(FORM_ENDPOINT, { method: "POST", body: donnees, mode: "no-cors" });
-        }
-        form.querySelector(".champ").style.display = "none";
-        form.querySelector(".note").style.display = "none";
-        afficher("C'est noté ✓ On te prévient dès l'ouverture.", "ok");
-      } catch (err) {
-        afficher("Oups, ça n'est pas passé. Réessaie dans un instant.", "erreur");
-        bouton.disabled = false;
-        bouton.textContent = "Préviens-moi";
-      }
-    });
-  </script>
+<!-- =================== PROCESS =================== -->
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="entete-section centre revele">
+      <div class="sur-titre">Comment ça marche</div>
+      <h2>Simple, du début <span class="accent">à l'imprimeur.</span></h2>
+      <p class="chapo">Pas de rendez-vous, pas de devis. Tout se fait en ligne, et tu sais toujours où en est ton projet.</p>
+    </div>
+    <ol class="etapes">
+      <li class="etape revele">
+        <h3>Tu choisis ton offre</h3>
+        <p>Tu paies en ligne, en toute sécurité. Ton projet est lancé.</p>
+        <span class="duree">2 minutes</span>
+      </li>
+      <li class="etape revele" data-delai="1">
+        <h3>Tu remplis ton brief</h3>
+        <p>Ton produit, ton contenant, ta cible, tes inspirations et tes textes.</p>
+        <span class="duree">15 minutes</span>
+      </li>
+      <li class="etape revele" data-delai="2">
+        <h3>Tu reçois ton concept</h3>
+        <p>Ton premier concept arrive, avec la réflexion qui va avec.</p>
+        <span class="duree">5 jours ouvrés</span>
+      </li>
+      <li class="etape revele" data-delai="3">
+        <h3>On peaufine, tu valides</h3>
+        <p>2 séries de corrections, tu signes le BAT, et tu reçois tous tes fichiers.</p>
+        <span class="duree">À ton rythme</span>
+      </li>
+    </ol>
+    <div class="process-cta"><a class="btn btn-achat" href="#offres">Commencer mon projet <span class="fleche" aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<!-- =================== RÉALISATIONS =================== -->
+<section class="section section-pierre" id="realisations">
+  <div class="wrap">
+    <div class="entete-section revele">
+      <div class="sur-titre">Réalisations</div>
+      <h2>Le style Lably, <span class="accent">en vrai.</span></h2>
+      <p class="chapo">Des projets concept dessinés par le studio pour te montrer ce qu'on sait faire, secteur par secteur.</p>
+    </div>
+    <!-- TODO : remplacer ces visuels provisoires par les créations fournies par Dimitri -->
+    <div class="realisations-grille">
+      <article class="projet revele">
+        <div class="projet-visuel" style="background: linear-gradient(160deg, #F1C9BE, #E2533A)">
+          <span class="concept">Projet concept</span>
+          <div class="mini-etiquette"><span class="mini-trou"></span><b>nova</b><small>MAGNÉSIUM · 60 GÉLULES</small></div>
+        </div>
+        <div class="projet-legende"><strong>Nova</strong><span>Compléments alimentaires</span></div>
+      </article>
+      <article class="projet revele" data-delai="1">
+        <div class="projet-visuel" style="background: linear-gradient(160deg, #3A3936, #111)">
+          <span class="concept">Projet concept</span>
+          <div class="mini-etiquette sombre"><span class="mini-trou"></span><b>brume</b><small>SÉRUM VISAGE · 30 ML</small></div>
+        </div>
+        <div class="projet-legende"><strong>Brume</strong><span>Cosmétiques</span></div>
+      </article>
+      <article class="projet revele" data-delai="2">
+        <div class="projet-visuel" style="background: linear-gradient(160deg, #E6D3BD, #B98F69)">
+          <span class="concept">Projet concept</span>
+          <div class="mini-etiquette"><span class="mini-trou"></span><b>maël</b><small>CAFÉ DE SPÉCIALITÉ · 250 G</small></div>
+        </div>
+        <div class="projet-legende"><strong>Maël</strong><span>Café de spécialité</span></div>
+      </article>
+    </div>
+    <p class="realisations-note">Les projets de nos premiers clients rejoindront cette galerie, avec leur accord.</p>
+  </div>
+</section>
+
+<!-- =================== STUDIO =================== -->
+<section class="section" id="studio">
+  <div class="wrap studio-grille">
+    <div class="revele">
+      <div class="sur-titre">Le studio</div>
+      <h2>Derrière Lably, <span class="accent">des designers.</span> Pas un générateur.</h2>
+      <p class="chapo">Lably est un studio français de design packaging. Une direction artistique exigeante, des designers spécialisés, et une méthode pensée pour les marques qui démarrent.</p>
+      <blockquote class="citation">« Une marque qui se lance n'a pas droit à un packaging approximatif. Le premier lot, c'est la première impression. »
+        <footer>— Le studio Lably</footer>
+      </blockquote>
+    </div>
+    <div class="studio-points">
+      <div class="studio-point revele"><div class="trou"></div><div><strong>Chaque projet est validé</strong><p>Rien ne part chez toi sans être passé par notre direction artistique.</p></div></div>
+      <div class="studio-point revele" data-delai="1"><div class="trou"></div><div><strong>Des spécialistes du packaging</strong><p>Nos designers sont sélectionnés sur test, sur un vrai brief d'étiquette.</p></div></div>
+      <div class="studio-point revele" data-delai="2"><div class="trou"></div><div><strong>Pensé pour l'impression</strong><p>Formats, matières, contraintes techniques : on dessine pour le réel, pas pour l'écran.</p></div></div>
+      <div class="studio-point revele" data-delai="3"><div class="trou"></div><div><strong>Une méthode, pas du sur-mesure flou</strong><p>Des offres claires, des délais tenus, un interlocuteur du début à la fin.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FAQ =================== -->
+<section class="section section-pierre" id="faq">
+  <div class="wrap faq-grille">
+    <div class="entete-section revele">
+      <div class="sur-titre">Questions fréquentes</div>
+      <h2>Tout ce que tu te demandes <span class="accent">avant de te lancer.</span></h2>
+      <p class="chapo">Une autre question ? Écris-nous à <a href="mailto:bonjour@lably.fr">bonjour@lably.fr</a>, on répond vite.</p>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Lably, c'est sérieux ?</summary>
+        <div class="reponse"><p>Oui. Lably est un studio de design packaging français. Nos prix sont fixes et affichés, nos conditions de vente sont publiques, et tu es remboursé si le premier concept ne te plaît pas. Tu ne prends aucun risque.</p></div>
+      </details>
+      <details>
+        <summary>Qui s'occupe des mentions obligatoires ?</summary>
+        <div class="reponse"><p>Le contenu réglementaire de ton étiquette (mentions obligatoires, allégations, liste d'ingrédients…) reste sous ta responsabilité : tu nous le fournis, idéalement validé avec ton fabricant.</p><p>Nous, on le met en page pour qu'il soit lisible, bien placé et conforme aux contraintes d'impression.</p></div>
+      </details>
+      <details>
+        <summary>Je n'ai pas encore de contenant ni de gabarit. C'est un problème ?</summary>
+        <div class="reponse"><p>Pas du tout, c'est même le cas de la plupart des marques qui démarrent. On part d'un contenant standard de ta catégorie (pilulier, flacon pompe, doypack…), facile à trouver chez les fournisseurs. Si ton fabricant te donne un gabarit, on l'utilise.</p></div>
+      </details>
+      <details>
+        <summary>Et si le premier concept ne me plaît pas ?</summary>
+        <div class="reponse"><p>On te rembourse intégralement. S'il te plaît mais que tu veux l'ajuster, tu as 2 séries de corrections incluses. Les conditions exactes sont dans nos <a href="cgv.html">CGV</a>.</p></div>
+      </details>
+      <details>
+        <summary>Vous créez aussi mon logo ?</summary>
+        <div class="reponse"><p>Non : Lably se concentre sur le packaging. On compose le nom de ton produit en typographie sur l'étiquette et on crée l'ambiance couleur de ton packaging. Si tu as besoin d'une identité de marque complète (logo, charte), on t'oriente vers un partenaire branding.</p></div>
+      </details>
+      <details>
+        <summary>Je peux imprimer où je veux ?</summary>
+        <div class="reponse"><p>Oui. Nos fichiers sont aux standards de l'imprimerie et fonctionnent chez n'importe quel imprimeur d'étiquettes. Le Kit de lancement te donne en plus une liste d'imprimeurs et de fabricants à contacter.</p></div>
+      </details>
+      <details>
+        <summary>Les fichiers m'appartiennent ?</summary>
+        <div class="reponse"><p>Oui. Une fois ton projet payé, tu reçois les droits d'exploitation de ton packaging pour ta marque, sans abonnement ni frais cachés. Le détail est dans nos <a href="cgv.html">CGV</a>.</p></div>
+      </details>
+      <details>
+        <summary>Combien de temps ça prend au total ?</summary>
+        <div class="reponse"><p>Ton premier concept arrive sous 5 jours ouvrés après ton brief. Ensuite, tout dépend de ta rapidité à faire tes retours : la plupart des projets se bouclent en 2 à 3 semaines.</p></div>
+      </details>
+      <details>
+        <summary>Je peux vous parler avant de commander ?</summary>
+        <div class="reponse"><p>Bien sûr. Écris-nous à <a href="mailto:bonjour@lably.fr">bonjour@lably.fr</a> avec ton projet, on te répond par écrit avec nos conseils. Pas d'appel commercial, promis.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- =================== APPEL FINAL =================== -->
+<section class="section final" style="padding-top: 120px">
+  <div class="wrap">
+    <div class="final-carte revele">
+      <div class="sur-titre" style="justify-content: center">Prêt à lancer ta marque ?</div>
+      <h2>Ton produit mérite <span class="accent">mieux qu'un packaging amateur.</span></h2>
+      <p class="chapo" style="margin-left: auto; margin-right: auto">Premier concept en 5 jours ouvrés. Satisfait ou remboursé. Dès 590&nbsp;€.</p>
+      <div class="final-actions">
+        <a class="btn btn-achat" href="#offres">Voir les offres et prix <span class="fleche" aria-hidden="true">→</span></a>
+      </div>
+
+      <form class="final-email" data-brevo novalidate>
+        <p>Pas encore prêt ? Laisse ton email, on te tient au courant de nos nouveautés et conseils pour lancer ta marque.</p>
+        <label for="email" class="sr">Ton email</label>
+        <div class="champ">
+          <input id="email" name="EMAIL" type="email" inputmode="email" autocomplete="email" placeholder="ton@email.fr" required>
+          <button type="submit">Je m'inscris</button>
+        </div>
+        <div class="hp" aria-hidden="true"><input type="text" name="site_web" tabindex="-1" autocomplete="off"></div>
+        <p class="petit">Pas de spam, désinscription en un clic. Voir notre <a href="confidentialite.html" style="color: inherit">politique de confidentialité</a>.</p>
+        <p class="message" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =================== PIED DE PAGE =================== -->
+<footer class="pied">
+  <div class="wrap">
+    <div class="pied-haut">
+      <div>
+        <img src="brand/lably-logo-inverse.svg" alt="Lably" width="372" height="140">
+        <p>Studio de design d'étiquettes et de packaging pour les marques qui se lancent.</p>
+      </div>
+      <div>
+        <h4>Offres</h4>
+        <ul>
+          <li><a href="#offres">Lancement · 590 €</a></li>
+          <li><a href="#offres">Gamme · 1 490 €</a></li>
+          <li><a href="#offres">Signature · 2 490 €</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Le studio</h4>
+        <ul>
+          <li><a href="#process">Comment ça marche</a></li>
+          <li><a href="#realisations">Réalisations</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="mailto:bonjour@lably.fr">bonjour@lably.fr</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Informations</h4>
+        <ul>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="cgv.html">Conditions générales de vente</a></li>
+          <li><a href="confidentialite.html">Confidentialité &amp; cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <span>© 2026 Lably. Tous droits réservés.</span>
+      <span>Fait en France · Paiement sécurisé</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
 </body>
 </html>

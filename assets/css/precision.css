@@ -70,10 +70,9 @@
 
 /* ---------- Tablette et mobile ---------- */
 @media (max-width: 960px) {
-  .precision-piste { height: 340vh; }
+  .precision-piste { height: 290vh; }
   .precision-grille { grid-template-columns: 1fr; gap: 18px; }
   .precision-texte h2 { font-size: clamp(26px, 6.4vw, 34px); }
-  .precision-texte .sur-titre { display: none; }
   .precision-etapes { margin-top: 12px; }
   .precision-etapes li { display: none; padding: 10px 0 0; border-top: 0; }
   .precision-etapes li.actif { display: grid; }

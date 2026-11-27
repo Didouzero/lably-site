@@ -17,6 +17,7 @@
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
 .hero-preuves { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 28px 0 0; padding: 0; list-style: none; font-size: 14.5px; color: var(--encre-2); }
 .hero-preuves li { display: inline-flex; align-items: center; gap: 8px; }
+.hero-preuves .court { display: none; }
 .hero-preuves li::before {
   content: ""; width: 16px; height: 16px; flex: none;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.4l2.8 2.8L12.5 5' fill='none' stroke='%23E2533A' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat;
@@ -180,10 +181,14 @@
 }
 @media (max-width: 560px) {
   .tuile { padding: 22px; border-radius: var(--rayon); }
-  .tuile-photo { min-height: 480px; }
+  .tuile-photo { min-height: 440px; }
   .epreuve { grid-template-columns: 1fr; gap: 18px; }
-  .controles { grid-template-columns: 1fr 1fr; }
-  .tuile-visuels { grid-template-columns: 112px minmax(0, 1fr); }
+  .controles { grid-template-columns: 1fr; }
+  /* Tuile 05 : téléphone et canaux côte à côte, le texte en pleine largeur dessous */
+  .tuile-visuels { grid-template-columns: 112px minmax(0, 1fr); grid-template-rows: auto auto; gap: 22px 22px; }
+  .tuile-visuels .telephone { grid-row: 1; }
+  .tuile-visuels .canaux { align-self: center; }
+  .tuile-visuels .tuile-texte { grid-column: 1 / -1; }
   .telephone { width: 112px; border-radius: 22px; }
   .telephone-ecran { border-radius: 17px; }
   .palette-aa { font-size: 56px; }
@@ -344,7 +349,16 @@
   .sachet-scene { min-height: 0; aspect-ratio: 4 / 5; }
   .vitrine-texte { padding: 28px; }
 }
-@media (max-width: 560px) { .vitrine-faits { grid-template-columns: 1fr 1fr; } .sachet-aide { top: 54px; right: auto; left: 16px; } }
+@media (max-width: 560px) {
+  .vitrine-texte { padding: 26px 22px; }
+  /* Les faits du projet en lignes (intitulé à gauche, valeur à droite) */
+  .vitrine-faits { grid-template-columns: 1fr; margin-top: 20px; }
+  .vitrine-faits div { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--pierre); }
+  .vitrine-faits dt { margin: 0; }
+  .vitrine-faits dd { text-align: right; }
+  .vitrine-faces { margin-top: 22px; }
+  .sachet-aide { top: 54px; right: auto; left: 16px; }
+}
 .projet { border-radius: var(--rayon); overflow: hidden; background: var(--blanc); box-shadow: var(--ombre-douce); }
 .projet-visuel { aspect-ratio: 4 / 5; display: grid; place-items: center; position: relative; }
 .projet-visuel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
@@ -452,7 +466,20 @@
   .portrait { position: static; max-width: 420px; }
 }
 @media (max-width: 560px) {
+  /* Haut de page mobile : tout centré, un seul bouton, les deux garanties sur une ligne */
+  .hero-texte { text-align: center; }
+  .hero .chapo { margin-left: auto; margin-right: auto; }
+  .hero-actions { margin-top: 28px; }
   .hero-actions .btn { width: 100%; }
+  .hero-actions .btn-contour { display: none; }
+  .hero-preuves { justify-content: center; gap: 8px 12px; margin-top: 18px; font-size: min(13px, 3.4vw); }
+  .hero-preuves li { gap: 5px; white-space: nowrap; }
+  .hero-preuves li::before { width: 14px; height: 14px; background-size: 14px; }
+  .hero-preuves .long { display: none; }
+  .hero-preuves .court { display: inline; }
+  /* Titre des bénéfices : la phrase corail suit la phrase noire (3 lignes au lieu de 4) */
+  .benefices h2 { font-size: min(34px, 8.8vw); }
+  .benefices h2 .accent { display: inline; }
   .scene .scene-concept { top: auto; bottom: 16px; left: 16px; right: auto; }
   .bulle { padding: 9px 12px 9px 9px; font-size: 12px; }
   .bulle .icone { width: 30px; height: 30px; }
@@ -473,6 +500,33 @@
   .coupon-fin.coupon { display: flex; }
   .onglets button { flex: 1; padding: 9px 8px; font-size: 13.5px; }
   .final-dans-faq { margin-top: 48px; }
+  /* Titres de section centrés partout sur mobile */
+  #realisations .entete-section, #faq .entete-section { text-align: center; }
+  #realisations .entete-section .chapo, #faq .entete-section .chapo { margin-left: auto; margin-right: auto; }
+  /* Offres : « Dans toutes les offres » en liste compacte dans une carte */
+  .inclus { display: grid; justify-items: start; gap: 11px; margin: -8px 0 20px; padding: 20px 22px; background: var(--blanc); border-radius: var(--rayon); box-shadow: var(--ombre-douce); }
+  .inclus li { padding: 0; background: none; box-shadow: none; font-size: 14.5px; }
+  .inclus .inclus-titre { padding: 0 0 2px; }
+  .offre { padding: 28px 22px 24px; }
+  .offre .pour { margin: 4px 0 16px; }
+  .offre .unique { margin-bottom: 14px; }
+  .specs { margin-bottom: 20px; }
+  .specs > div { padding: 10px 0; }
+  /* Réalisations : les 4 projets défilent au doigt au lieu de s'empiler */
+  .realisations-grille.etiquettes { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 var(--gouttiere); margin: 0 calc(-1 * var(--gouttiere)); padding: 4px var(--gouttiere) 18px; scrollbar-width: none; }
+  .realisations-grille.etiquettes::-webkit-scrollbar { display: none; }
+  .realisations-grille.etiquettes .projet { flex: 0 0 86%; scroll-snap-align: start; }
+  .realisations-grille.etiquettes .projet.revele { opacity: 1; transform: none; }
+  .projet-legende { flex-direction: column; align-items: flex-start; gap: 2px; padding: 14px 18px; }
+  .realisations-note { margin-top: 8px; }
+  /* Qui est derrière : portrait carré */
+  .portrait-vide, .portrait img { aspect-ratio: 1 / 1; }
+  /* FAQ plus serrée */
+  .faq-grille { gap: 0; }
+  .faq { gap: 8px; }
+  .faq summary { padding: 17px 18px; font-size: 16px; }
+  .faq .reponse { padding: 0 18px 18px; font-size: 15.5px; }
+  .final-carte .chapo { text-wrap: balance; }
   .final-carte { padding: 44px 22px; border-radius: var(--rayon); }
   .final-actions .btn { width: 100%; }
   .champ { flex-direction: column; border-radius: 20px; }

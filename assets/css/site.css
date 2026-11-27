@@ -54,12 +54,17 @@ button { font: inherit; }
   letter-spacing: -0.035em;
   line-height: 1.05;
   margin: 0;
-  text-wrap: balance;
+  text-wrap: pretty;
 }
-h1 { font-size: clamp(44px, 7vw, 88px); letter-spacing: -0.045em; line-height: 0.98; }
+h1 { font-size: clamp(42px, 5.6vw, 72px); letter-spacing: -0.045em; line-height: 0.98; }
 h2 { font-size: clamp(34px, 4.6vw, 58px); }
 h3 { font-size: 22px; letter-spacing: -0.02em; line-height: 1.2; }
 .accent { color: var(--corail); }
+/* Grands titres : chaque morceau (phrase noire, phrase corail, .ligne) commence sur sa propre ligne,
+   puis chaque morceau est équilibré séparément s'il doit passer sur deux lignes. */
+h1, h2 { text-wrap: balance; }
+h1 .accent, h2 .accent, h1 .ligne, h2 .ligne { display: block; }
+h1 .accent.en-ligne, h2 .accent.en-ligne { display: inline; }
 .sur-titre {
   display: inline-flex; align-items: center; gap: 10px;
   font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
@@ -112,7 +117,8 @@ h3 { font-size: 22px; letter-spacing: -0.02em; line-height: 1.2; }
 }
 .entete.defile { border-bottom-color: var(--pierre); }
 .entete .wrap { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.entete .logo img { height: 36px; width: auto; }
+.entete .logo { display: inline-flex; line-height: 0; }
+.entete .logo img, .entete .logo-svg { height: 36px; width: auto; overflow: visible; }
 .nav { display: flex; align-items: center; gap: 30px; }
 .nav a { font-size: 15px; font-weight: 500; text-decoration: none; color: var(--encre-2); }
 .nav a:hover { color: var(--encre); }
@@ -122,12 +128,12 @@ h3 { font-size: 22px; letter-spacing: -0.02em; line-height: 1.2; }
 
 /* ---------- Sections ---------- */
 section { position: relative; }
-.section { padding: 120px 0; }
+.section { padding: 64px 0; }
 .section-pierre { background: var(--pierre); }
 .section-encre { background: var(--encre); color: var(--fond); }
 .section-encre .chapo { color: #CFCBC4; }
 .section-encre .sur-titre { color: #A9A49B; }
-.entete-section { margin-bottom: 64px; }
+.entete-section { margin-bottom: 48px; }
 
 /* Cartes */
 .carte {
@@ -201,7 +207,7 @@ section { position: relative; }
 
 /* ---------- Responsive commun ---------- */
 @media (max-width: 960px) {
-  .section { padding: 88px 0; }
+  .section { padding: 56px 0; }
   .nav {
     position: fixed; inset: var(--entete) 0 auto 0;
     flex-direction: column; align-items: stretch; gap: 0;
@@ -222,10 +228,47 @@ section { position: relative; }
 @media (max-width: 560px) {
   :root { --gouttiere: 16px; --entete: 64px; }
   body { font-size: 16px; }
-  .section { padding: 72px 0; }
-  .entete-section { margin-bottom: 40px; }
-  .entete .logo img { height: 32px; }
+  .section { padding: 48px 0; }
+  .entete-section { margin-bottom: 32px; }
+  .entete .logo img, .entete .logo-svg { height: 32px; }
   .entete-actions .btn-s { padding: 10px 14px; }
   .carte { padding: 24px; }
   .pied-haut { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   Logo animé : le point corail, la perforation, la pilule qui
+   se déroule, puis les lettres. Au survol, l'étiquette se balance
+   autour de son trou.
+   ========================================================= */
+.logo-svg .point, .logo-svg .trou { transform-box: fill-box; transform-origin: center; }
+.logo-svg .pilule-g { transform-box: view-box; transform-origin: 70px 70px; }
+.logo-svg .pilule-m { transform-box: view-box; transform-origin: 70px 70px; }
+.logo-svg .lettre { transform-box: fill-box; transform-origin: 50% 100%; }
+.logo-svg .etiquette { transform-box: view-box; transform-origin: 70px 70px; }
+.logo-svg.intro { transform-origin: 20% 50%; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo-svg.intro { animation: logo-pression .5s cubic-bezier(.3,.7,.4,1) 1.5s both; }
+  .logo-svg.intro .point { animation: logo-point .55s cubic-bezier(.3,1.6,.5,1) .05s both; }
+  .logo-svg.intro .pilule-g { animation: logo-disque .5s cubic-bezier(.25,1.35,.5,1) .3s both; }
+  .logo-svg.intro .trou { animation: logo-perfore .45s cubic-bezier(.3,1.8,.5,1) .55s both; }
+  .logo-svg.intro .pilule-m { animation: logo-deroule .62s cubic-bezier(.7,0,.15,1) .78s both; }
+  .logo-svg.intro .pilule-d { animation: logo-bout .62s cubic-bezier(.7,0,.15,1) .78s both; }
+  .logo-svg.intro .lettre { animation: logo-lettre .5s cubic-bezier(.2,1.3,.4,1) calc(1.08s + var(--i) * 55ms) both; }
+
+  .logo:hover .logo-svg .etiquette,
+  .logo:focus-visible .logo-svg .etiquette { animation: logo-balance 1.1s cubic-bezier(.3,.6,.4,1); }
+}
+
+@keyframes logo-point { 0% { transform: scale(0); } 60% { transform: scale(1.5); } 100% { transform: scale(1); } }
+@keyframes logo-disque { 0% { transform: scale(0); } 100% { transform: scale(1); } }
+@keyframes logo-perfore { 0% { transform: scale(0); } 100% { transform: scale(1); } }
+@keyframes logo-deroule { 0% { transform: scaleX(0); } 100% { transform: scaleX(1); } }
+@keyframes logo-bout { 0% { transform: translateX(-231.23px); opacity: 0; } 0.1% { opacity: 1; } 100% { transform: translateX(0); opacity: 1; } }
+@keyframes logo-lettre { 0% { transform: translateY(46px) rotate(-8deg); opacity: 0; } 30% { opacity: 1; } 100% { transform: none; opacity: 1; } }
+@keyframes logo-pression { 0%, 100% { transform: none; } 35% { transform: scale(.94); } 70% { transform: scale(1.02); } }
+@keyframes logo-balance {
+  0% { transform: rotate(0); } 18% { transform: rotate(9deg); } 40% { transform: rotate(-5deg); }
+  60% { transform: rotate(2.5deg); } 80% { transform: rotate(-1deg); } 100% { transform: rotate(0); }
 }

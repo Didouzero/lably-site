@@ -77,7 +77,7 @@
         d.append("html_type", "simple");
         await fetch(FORM_ENDPOINT, { method: "POST", body: d, mode: "no-cors" });
         form.classList.add("envoye");
-        afficher("C'est noté ✓ On t'écrit très vite.", "ok");
+        afficher("C'est noté ✓ On vous écrit très vite.", "ok");
       } catch (err) {
         afficher("Oups, ça n'est pas passé. Réessaie dans un instant.", "erreur");
         bouton.disabled = false;
@@ -85,4 +85,16 @@
       }
     });
   });
+})();
+
+/* Carrousel : on duplique la liste pour une boucle sans couture. */
+(function () {
+  var rail = document.querySelector(".carrousel-rail");
+  if (!rail) return;
+  var liste = rail.querySelector(".carrousel-liste");
+  var copie = liste.cloneNode(true);
+  copie.setAttribute("aria-hidden", "true");
+  copie.querySelectorAll("img").forEach(function (i) { i.alt = ""; });
+  rail.appendChild(copie);
+  rail.style.setProperty("--duree", (liste.children.length * 7) + "s");
 })();

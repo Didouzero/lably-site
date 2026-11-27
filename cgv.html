@@ -9,13 +9,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/site.css?v=202611271830">
 </head>
 <body>
 
 <header class="entete">
   <div class="wrap">
-    <a class="logo" href="index.html" aria-label="Lably, accueil"><img src="brand/lably-logo.svg" alt="Lably" width="372" height="140"></a>
+    <a class="logo" href="index.html" aria-label="Lably, accueil"><svg class="logo-svg" viewBox="0 0 372 140" width="372" height="140" role="img" aria-label="Lably"><defs><mask id="logo-trou" maskUnits="userSpaceOnUse" x="0" y="0" width="372" height="140"><rect width="372" height="140" fill="#fff"/><circle class="trou" cx="70" cy="70" r="13" fill="#000"/></mask><clipPath id="logo-cadre"><rect width="372" height="140" rx="70"/></clipPath></defs><g class="etiquette"><g mask="url(#logo-trou)" fill="#111111"><circle class="pilule-g" cx="70" cy="70" r="70"/><rect class="pilule-m" x="70" y="0" width="231.23" height="140"/><circle class="pilule-d" cx="301.23" cy="70" r="70"/></g><circle class="point" cx="70" cy="70" r="7" fill="#E2533A"/><g class="lettres" fill="#F6F5F2" clip-path="url(#logo-cadre)"><path class="lettre" style="--i:0" fill-rule="evenodd" d="M139.0625 27.078125H127.25V96.921875H139.0625Z"/><path class="lettre" style="--i:1" fill-rule="evenodd" d="M161.77625 97.71875C169.83875 97.71875 174.010625 94.34375 176.354375 89.9375H176.541875V96.921875H188.166875V63.171875C188.166875 52.859375 180.52625 46.4375 167.635625 46.4375C154.698125 46.4375 146.635625 52.953125 146.073125 62.796875H157.46375C157.791875 58.625 161.635625 55.625 167.40125 55.625C173.073125 55.625 176.448125 58.625 176.448125 62.84375V63.21875C176.448125 66.59375 173.3075 66.734375 164.12 67.765625C153.90125 68.84375 144.666875 71.609375 144.666875 82.859375C144.666875 92.75 151.9325 97.71875 161.77625 97.71875ZM164.6825 88.953125C159.52625 88.953125 156.198125 86.65625 156.198125 82.765625C156.198125 78.265625 160.510625 76.4375 165.573125 75.6875C170.448125 74.9375 175.041875 74.1875 176.495 73.25V78.59375C176.495 84.359375 172.416875 88.953125 164.6825 88.953125Z"/><path class="lettre" style="--i:2" fill-rule="evenodd" d="M222.45875 97.90625C235.39625 97.90625 243.880625 87.546875 243.880625 72.125C243.880625 56.890625 235.255625 46.4375 222.505625 46.4375C216.08375 46.4375 210.83375 49.015625 207.64625 54.453125H207.5525V27.078125H195.74V96.921875H207.365V89.375H207.45875C210.5525 95.09375 215.99 97.90625 222.45875 97.90625ZM219.693125 88.015625C211.95875 88.015625 206.89625 81.78125 206.89625 72.125C206.89625 62.515625 211.95875 56.234375 219.693125 56.234375C227.005625 56.234375 231.9275 61.90625 231.9275 72.125C231.9275 82.390625 227.005625 88.015625 219.693125 88.015625Z"/><path class="lettre" style="--i:3" fill-rule="evenodd" d="M261.01625 27.078125H249.20374999999999V96.921875H261.01625Z"/><path class="lettre" style="--i:4" fill-rule="evenodd" d="M269.526875 116.515625H277.26125C284.433125 116.515625 289.308125 112.8125 292.26125 105.078125L314.38625 47.421875H302.01125L292.964375 73.203125C291.69875 76.859375 290.526875 80.515625 289.401875 84.171875C288.276875 80.515625 287.058125 76.859375 285.839375 73.203125L276.745625 47.421875H264.23L283.308125 96.640625L281.48 101.421875C280.07375 105.3125 278.57375 106.90625 275.38625 106.90625H269.526875Z"/></g></g></svg></a>
     <a class="btn btn-contour btn-s" href="index.html">← Retour au site</a>
   </div>
 </header>
@@ -37,9 +37,11 @@
     <h2>3. Prestations proposées</h2>
     <p>Lably propose trois offres, dont le contenu détaillé figure sur la page d'accueil au moment de la commande :</p>
     <ul>
-      <li><strong>Lancement</strong> : 1 étiquette, fichiers prêts pour l'imprimeur, 3 visuels 3D, Kit de lancement.</li>
-      <li><strong>Gamme</strong> : 3 étiquettes déclinées, 6 visuels 3D, fichiers prêts pour l'imprimeur, Kit de lancement.</li>
-      <li><strong>Signature</strong> : étiquettes et boîte coordonnées, 10 visuels d'ambiance, 30 minutes d'accompagnement, fichiers prêts pour l'imprimeur, Kit de lancement ; impression coordonnée en option.</li>
+      <li><strong>Lancement</strong> : 1 étiquette (face et dos) pour 1 produit dans 1 format, 3 visuels 3D.</li>
+      <li><strong>Gamme</strong> : 3 étiquettes (face et dos) au choix, pour 3 produits ou pour un même produit en plusieurs formats, 6 visuels 3D.</li>
+      <li><strong>Signature</strong> : le contenu de l'offre Gamme, 3 boîtes (étuis standards) assorties, 4 visuels mis en scène et un appel de 30 minutes en visio avec le directeur artistique avant le début du projet.</li>
+      <li><strong>Option boîte</strong> (avec Lancement ou Gamme) : 1 boîte (étui standard) assortie à l'étiquette, 390 € par boîte.</li>
+      <li>Toutes les offres comprennent les fichiers prêts pour l'imprimeur, 2 séries de corrections et le guide de lancement.</li>
     </ul>
     <p>Les prestations portent sur des formats d'étiquettes et de boîtes standards. Sont <strong>exclus</strong> : la création de nom de marque, la création de logo et de ses déclinaisons, la charte graphique complète, les sites web et contenus pour réseaux sociaux, le packaging structurel sur mesure (formes de boîtes inédites), ainsi que l'impression, sauf option expressément souscrite.</p>
 
@@ -54,7 +56,7 @@
     <p>Si le Client n'a pas de gabarit fabricant, Lably travaille sur un contenant standard de sa catégorie. Un changement de contenant après le premier concept peut nécessiter une adaptation, facturée selon le devis communiqué au Client <span class="a-completer">[À VALIDER]</span>.</p>
 
     <h2>7. Délais</h2>
-    <p>Lably livre un premier concept dans un délai de <strong>5 jours ouvrés</strong> à compter de la réception du brief complet. Les délais suivants dépendent de la rapidité des retours du Client. Sans réponse du Client pendant <span class="a-completer">[À COMPLÉTER : ex. 60 jours]</span>, le projet peut être clôturé ; les fichiers déjà validés sont alors livrés en l'état.</p>
+    <p>Lably livre un premier concept dans un délai de <strong>48 heures</strong> <span class="a-completer">[À VALIDER : « 48 heures ouvrées » pour exclure week-ends et jours fériés ?]</span> à compter de la réception du brief complet. Les délais suivants dépendent de la rapidité des retours du Client. Sans réponse du Client pendant <span class="a-completer">[À COMPLÉTER : ex. 60 jours]</span>, le projet peut être clôturé ; les fichiers déjà validés sont alors livrés en l'état.</p>
 
     <h2>8. Corrections</h2>
     <p>Chaque offre comprend <strong>2 séries de corrections</strong> sur le concept choisi. Une série de corrections est l'ensemble des demandes de modification transmises en une seule fois. Les demandes qui reviennent à un nouveau concept (changement complet de direction) ne constituent pas une correction. Des corrections supplémentaires peuvent être proposées au tarif de <span class="a-completer">[À COMPLÉTER]</span>.</p>
@@ -65,7 +67,7 @@
 
     <h2>10. Validation et livraison</h2>
     <p>Avant la livraison des fichiers définitifs, le Client valide un bon à tirer (« BAT »). Il lui appartient de vérifier attentivement l'ensemble des textes, mentions, chiffres, codes-barres et coordonnées. Après validation du BAT, Lably ne peut être tenu responsable d'une erreur qui y figurait.</p>
-    <p>Les fichiers définitifs (fichier imprimeur, fichier source, visuels 3D) et le Kit de lancement sont livrés par voie électronique après validation du BAT.</p>
+    <p>Les fichiers définitifs (fichier imprimeur, fichier source, visuels 3D) et le guide de lancement sont livrés par voie électronique après validation du BAT.</p>
 
     <h2>11. Contenu réglementaire</h2>
     <p>Le contenu réglementaire des étiquettes (mentions obligatoires, liste d'ingrédients, allégations nutritionnelles ou de santé, avertissements, numéros de lot, etc.) relève de la <strong>seule responsabilité du Client</strong>, qui le fournit à Lably. Lably met en page ce contenu de manière lisible mais ne vérifie pas sa conformité à la réglementation applicable (notamment alimentaire, des compléments alimentaires ou des cosmétiques). Le Client est invité à faire valider ce contenu par son fabricant ou un expert réglementaire.</p>
@@ -105,6 +107,6 @@
     </div>
   </div>
 </footer>
-<script src="assets/js/site.js"></script>
+<script src="assets/js/site.js?v=202611271234"></script>
 </body>
 </html>

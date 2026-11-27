@@ -81,3 +81,17 @@
     collerTout(etageres.find((x) => !x.hidden));
   }, { threshold: 0.35 }).observe(bloc);
 })();
+
+/* En attendant le paiement en ligne : les boutons « Choisir … » mènent à la liste d'attente. */
+(() => {
+  const form = document.getElementById("liste-attente");
+  if (!form) return;
+  const intro = form.querySelector(".final-email-intro");
+  const champ = form.querySelector('input[type="email"]');
+  document.querySelectorAll("[data-offre]").forEach((b) =>
+    b.addEventListener("click", () => {
+      intro.innerHTML = `<strong>L'offre ${b.dataset.offre} ouvre très bientôt.</strong> Laissez votre email : vous serez prévenu en premier.`;
+      setTimeout(() => champ.focus({ preventScroll: true }), 700);
+    })
+  );
+})();

@@ -422,8 +422,8 @@
           <div><dt>Visuels mis en scène <span class="aide" tabindex="0" aria-label="Visuels mis en scène : votre produit dans un décor, avec accessoires et lumière, pour vos réseaux et vos pubs.">?<span class="bulle-aide" aria-hidden="true">Votre produit dans un décor, avec accessoires et lumière, pour vos réseaux et vos pubs.</span></span></dt><dd class="non" aria-label="Non inclus">—</dd></div>
           <div><dt>Appel de cadrage</dt><dd class="non" aria-label="Non inclus">—</dd></div>
         </dl>
-        <!-- TODO : lien de paiement Stripe -->
-        <a class="btn btn-encre" href="#">Choisir Lancement</a>
+        <!-- TODO : remplacer #liste-attente par les liens de paiement Stripe -->
+        <a class="btn btn-encre" href="#liste-attente" data-offre="Lancement">Choisir Lancement</a>
       </article>
 
       <article class="offre offre-vedette revele" data-delai="1">
@@ -439,7 +439,7 @@
           <div><dt>Visuels mis en scène</dt><dd class="non" aria-label="Non inclus">—</dd></div>
           <div><dt>Appel de cadrage</dt><dd class="non" aria-label="Non inclus">—</dd></div>
         </dl>
-        <a class="btn btn-achat" href="#">Choisir Gamme</a>
+        <a class="btn btn-achat" href="#liste-attente" data-offre="Gamme">Choisir Gamme</a>
       </article>
 
       <article class="offre revele" data-delai="2">
@@ -454,7 +454,7 @@
           <div><dt>Visuels mis en scène</dt><dd class="fort">4</dd></div>
           <div><dt>Appel de cadrage <span class="aide" tabindex="0" aria-label="Appel de cadrage : 30 minutes en visio avec le directeur artistique, pour cadrer votre univers avant de commencer.">?<span class="bulle-aide" aria-hidden="true">30 minutes en visio avec le directeur artistique, pour cadrer votre univers avant de commencer.</span></span></dt><dd class="fort">30 min</dd></div>
         </dl>
-        <a class="btn btn-encre" href="#">Choisir Signature</a>
+        <a class="btn btn-encre" href="#liste-attente" data-offre="Signature">Choisir Signature</a>
       </article>
     </div>
   </div>
@@ -758,8 +758,8 @@
         <a class="btn btn-achat" href="#offres">Voir les offres et prix <span class="fleche" aria-hidden="true">→</span></a>
       </div>
 
-      <form class="final-email" data-brevo novalidate>
-        <p>Pas encore prêt ? Laissez votre email, on vous tient au courant de nos nouveautés et conseils pour lancer votre marque.</p>
+      <form class="final-email" id="liste-attente" data-brevo novalidate>
+        <p class="final-email-intro">Pas encore prêt ? Laissez votre email, on vous tient au courant de nos nouveautés et conseils pour lancer votre marque.</p>
         <label for="email" class="sr">Votre email</label>
         <div class="champ">
           <input id="email" name="EMAIL" type="email" inputmode="email" autocomplete="email" placeholder="votre@email.fr" required>
@@ -817,9 +817,9 @@
   </div>
 </footer>
 
-<script src="assets/js/site.js?v=202611271435"></script>
+<script src="assets/js/site.js?v=202611272230"></script>
 <script src="assets/js/precision.js?v=202611271435"></script>
-<script src="assets/js/benefices.js?v=202611272130"></script>
+<script src="assets/js/benefices.js?v=202611272230"></script>
 <script type="module" src="assets/js/sachet-3d.js?v=202611271435"></script>
 </body>
 </html>

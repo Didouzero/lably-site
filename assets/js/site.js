@@ -63,7 +63,7 @@
 
       const email = input.value.trim();
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        afficher("Hmm, cet email n'a pas l'air valide. Tu peux vérifier ?", "erreur");
+        afficher("Cet email n'a pas l'air valide. Pouvez-vous vérifier ?", "erreur");
         input.focus();
         return;
       }
@@ -79,7 +79,7 @@
         form.classList.add("envoye");
         afficher("C'est noté ✓ On vous écrit très vite.", "ok");
       } catch (err) {
-        afficher("Oups, ça n'est pas passé. Réessaie dans un instant.", "erreur");
+        afficher("Oups, ça n'est pas passé. Réessayez dans un instant.", "erreur");
         bouton.disabled = false;
         bouton.textContent = libelle;
       }

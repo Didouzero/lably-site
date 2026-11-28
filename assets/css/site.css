@@ -65,6 +65,9 @@ h3 { font-size: 22px; letter-spacing: -0.02em; line-height: 1.2; }
 h1, h2 { text-wrap: balance; }
 h1 .accent, h2 .accent, h1 .ligne, h2 .ligne { display: block; }
 h1 .accent.en-ligne, h2 .accent.en-ligne { display: inline; }
+/* Le point final reprend la couleur du début du titre (encre sur fond clair, blanc cassé sur fond encre). */
+.accent .point-final { color: var(--encre); }
+.section-encre .accent .point-final, .final-carte .accent .point-final { color: var(--fond); }
 .chapo { font-size: clamp(17px, 1.6vw, 20px); color: var(--encre-2); max-width: 38em; margin: 20px 0 0; }
 .centre { text-align: center; }
 .centre .chapo { margin-left: auto; margin-right: auto; }

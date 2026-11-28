@@ -50,8 +50,6 @@
     };
   });
 
-  anims.forEach(function (A) { if (A.longueur !== 1) A.e.style.strokeDasharray = A.longueur; });
-
   var etapes = [].slice.call(section.querySelectorAll(".precision-etapes li"));
   var barre = section.querySelector(".plan-progression i");
   var champs = {};
@@ -81,7 +79,15 @@
         continue;
       }
       if (A.trace) {
-        A.e.style.strokeDashoffset = A.longueur * (1 - t);
+        // Une fois le tracé terminé, trait plein : certains navigateurs (Safari) découpent les
+        // pointillés du texte autrement, et le dessin resterait incomplet.
+        if (t >= 1) {
+          A.e.style.strokeDasharray = "none";
+          A.e.style.strokeDashoffset = 0;
+        } else {
+          A.e.style.strokeDasharray = A.longueur;
+          A.e.style.strokeDashoffset = A.longueur * (1 - t);
+        }
       } else {
         var o = t;
         if (A.sortie !== null && p > A.sortie) o = t * (1 - 0.8 * borne((p - A.sortie) / 0.06));

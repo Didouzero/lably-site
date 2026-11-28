@@ -1,5 +1,5 @@
 /* Sachet doypack en 3D, tournable à la souris ou au doigt.
-   Utilisation : <div class="sachet-3d" data-avant="…webp" data-dos="…webp"> … </div> */
+   Utilisation : <div class="sachet-3d" data-avant="…webp" data-dos="…webp" data-teinte="#1F3FA8"> … </div> */
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
@@ -30,9 +30,14 @@ function demarrer(boite) {
   const RAYON = 7.4;
   camera.position.copy(CIBLE).add(new THREE.Vector3().setFromSpherical(new THREE.Spherical(RAYON, Math.PI / 2 - 0.1, 0.45)));
 
+  /* Teinte dominante du sachet (data-teinte) : fond du soufflet, reflet du sol et ombre portée */
+  const teinte = new THREE.Color(boite.dataset.teinte || "#9c0e33");
+  const teinteSombre = teinte.clone().multiplyScalar(0.62);
+  const ombreRVB = [teinte.r, teinte.g, teinte.b].map(function (c) { return Math.round(c * 255 * 0.32); }).join(",");
+
   const lumiere = new THREE.DirectionalLight(0xffffff, 0.9);
   lumiere.position.set(3, 5, 4);
-  scene.add(lumiere, new THREE.HemisphereLight(0xfff4ec, 0x6a3040, 0.25));
+  scene.add(lumiere, new THREE.HemisphereLight(0xfff4ec, teinteSombre, 0.25));
 
   /* ---------- Géométrie du sachet ---------- */
   const L = 1.6, H = 2.3, P = 0.3; // largeur, hauteur, demi-épaisseur max (unités = décimètres)
@@ -110,14 +115,14 @@ function demarrer(boite) {
   const sachet = new THREE.Group();
   sachet.add(new THREE.Mesh(panneau(1), matiere(boite.dataset.avant)));
   sachet.add(new THREE.Mesh(panneau(-1), matiere(boite.dataset.dos)));
-  sachet.add(new THREE.Mesh(fond(), new THREE.MeshStandardMaterial({ color: 0x9c0e33, roughness: 0.6, side: THREE.DoubleSide })));
+  sachet.add(new THREE.Mesh(fond(), new THREE.MeshStandardMaterial({ color: teinte, roughness: 0.6, side: THREE.DoubleSide })));
   scene.add(sachet);
 
   // Ombre douce au sol
   const co = document.createElement("canvas"); co.width = co.height = 256;
   const xo = co.getContext("2d");
   const gr = xo.createRadialGradient(128, 128, 0, 128, 128, 128);
-  gr.addColorStop(0, "rgba(60,10,25,.38)"); gr.addColorStop(1, "rgba(60,10,25,0)");
+  gr.addColorStop(0, "rgba(" + ombreRVB + ",.38)"); gr.addColorStop(1, "rgba(" + ombreRVB + ",0)");
   xo.fillStyle = gr; xo.fillRect(0, 0, 256, 256);
   const ombre = new THREE.Mesh(new THREE.PlaneGeometry(3.2, 1.6), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(co), transparent: true, depthWrite: false }));
   ombre.rotation.x = -Math.PI / 2; ombre.position.y = -0.005;

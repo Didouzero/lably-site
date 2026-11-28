@@ -93,3 +93,7 @@
   .precision-etapes p { max-height: none; opacity: 1; margin-top: 6px; }
   .plan-svg { height: auto; max-height: none; }
 }
+
+@media (max-width: 560px) {
+  #precision-titre { text-align: center; }
+}

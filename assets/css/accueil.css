@@ -503,10 +503,14 @@
   /* Titres de section centrés partout sur mobile */
   #realisations .entete-section, #faq .entete-section { text-align: center; }
   #realisations .entete-section .chapo, #faq .entete-section .chapo { margin-left: auto; margin-right: auto; }
-  /* Offres : « Dans toutes les offres » en liste compacte dans une carte */
-  .inclus { display: grid; justify-items: start; gap: 11px; margin: -8px 0 20px; padding: 20px 22px; background: var(--blanc); border-radius: var(--rayon); box-shadow: var(--ombre-douce); }
-  .inclus li { padding: 0; background: none; box-shadow: none; font-size: 14.5px; }
-  .inclus .inclus-titre { padding: 0 0 2px; }
+  /* Offres : titre sur 2 lignes (noir puis corail), « Dans toutes les offres » en liste serrée dans une carte */
+  #offres h2 { font-size: min(28px, 7.3vw); }
+  #offres .entete-section { margin-bottom: 24px; }
+  #offres .chapo { margin-top: 12px; font-size: 16px; text-wrap: balance; }
+  .inclus { display: grid; justify-items: start; gap: 6px; margin: 0 0 16px; padding: 14px 18px; background: var(--blanc); border-radius: var(--rayon); box-shadow: var(--ombre-douce); }
+  .inclus li { padding: 0; background: none; box-shadow: none; font-size: 13.5px; line-height: 1.35; gap: 7px; }
+  .inclus li::before { width: 16px; height: 16px; font-size: 9px; }
+  .inclus .inclus-titre { padding: 0 0 2px; font-size: 11px; }
   .offre { padding: 28px 22px 24px; }
   .offre .pour { margin: 4px 0 16px; }
   .offre .unique { margin-bottom: 14px; }
